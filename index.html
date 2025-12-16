@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed de Instagram con Bootstrap</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/072e5df971.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!--Barra de navegación-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+<!-- Logo e Instagram-->
+<a class="navbar-brand d-flex align-items-center" href="#">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/40px-Instagram_logo_2016.svg.png" alt="Instagram" width="30" height="30" class="d-inline-block align-text-top me-2">
+Instagram
+</a>
+
+<!-- Botones al final -->
+<div class="ms-auto d-flex align-items-center gap-2">
+
+<!-- Botón verde: Create a new post -->
+ <!-- Botón que abrirá el modal -->
+<button type="button" class="btn btn-success text-white" data-bs-toggle="modal" data-bs-target="#modalNewPost">
+  Create a new post
+</button>
+
+<!-- El Modal -->
+<div class="modal fade" id="modalNewPost" tabindex="-1" aria-labelledby="modalNewPostLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Cabecera del Modal -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalNewPostLabel">Create a new post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- Cuerpo del Modal -->
+      <div class="modal-body">
+        Caption:
+        <textarea class="form-control" rows="3" placeholder="Add the caption of your post here"></textarea>
+          <!-- Botón Cámara -->
+         <button type="button" class="btn btn-sm btn-light me-2" title="Cámara">
+            <i class="fas fa-camera fa-lg"></i> <!-- Icono de cámara (Font Awesome) -->
+          </button>
+          <!-- Botón de Localización-->
+          <button type="button" class="btn btn-sm btn-light" title="Localización">
+            <i class="fas fa-map-marker-alt fa-lg"></i> <!-- Icono de localización (Font Awesome) -->
+          </button>
+      </div>
+
+      <!-- Footer del Modal -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success text-white">Publish</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Botón gris con ajustes y flecha -->
+<div class="dropdown">
+<button class="btn btn-secondary d-flex align-items-center gap-1" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+     <i class="bi bi-gear-fill"></i>
+     <i class="bi bi-caret-down-fill"></i>
+</button>
+   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">Accesibility</a></li>
+      <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+   </ul>
+</div>
+</div>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--Rejilla KO-->
+
+<div class="container-fluid mt-4">
+
+<!--Botones de selección de vista KO-->
+
+        <ul class="nav nav-pill justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                    <i class="fa-solid fa-table-cells"></i>
+                </a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="Profile" aria-selected="false">
+                    <i class="fa-solid fa-square"></i>
+                  
+                </a>
+            </li>
+        </ul>
+
+        
+        
+         <div class="tab-content" id="myTabContent">
+
+<!--Grilla de tres imágenes por fila-->
+
+            <div class="tab-pane fade show active overflow-hidden" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row">
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://picsum.photos/400/400?1" class="img-fluid w-100" alt=""></div>
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://picsum.photos/400/400?2" class="img-fluid w-100" alt=""></div>
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://picsum.photos/400/400?3" class="img-fluid w-100" alt=""></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://picsum.photos/400/400?4" class="img-fluid w-100" alt=""></div>
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://picsum.photos/400/400?5" class="img-fluid w-100" alt=""></div>
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://picsum.photos/400/400?6" class="img-fluid w-100" alt=""></div>
+                </div>
+
+                 <div class="row">
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://picsum.photos/400/4007" class="img-fluid w-100" alt=""></div>
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://picsum.photos/400/400?8" class="img-fluid w-100" alt=""></div>
+                    <div class="col-4 p-1"><img style="height: 30vw; object-fit: cover;" src="https://picsum.photos/400/400?9" class="img-fluid w-100" alt=""></div>
+                </div>
+              
+            </div>
+
+<!-- Grilla de una imagen por fila-->
+
+            <div class ="row justify-content-center g-1">
+               <div class="col-6">
+                 <div class="card">
+                   <div class="card-body d-flex justify-content-between p-2">
+                     <h6 class="card-title mb-0">Post número 1</h6>
+                     <h6 class="date">12/23</h6>
+                   </div>
+                   <img src="https://picsum.photos/600/400?1" class="card-img-top">
+
+                   <div class="card-body pt-2">
+                      <p class="mb-1 fw-semibold">❤️ 128 likes</p>
+                      <p class="card-text">Esta es una frase de ejemplo para el post.</p>
+
+                   </div>
+                 </div>
+               </div>
+            </div>
+
+            <div class ="row justify-content-center g-1">
+               <div class="col-6">
+                <div class="card">
+                  <div class="card-body d-flex justify-content-between p-2">
+                    <h6 class="card-title mb-0">Post número 2</h6>
+                    <h6 class="date">07/24</h6>
+                  </div>
+                  <img src="https://picsum.photos/600/400?2" class="card-img-top">
+
+                  <div class="card-body pt-2">
+                      <p class="mb-1 fw-semibold">❤️ 253 likes</p>
+                      <p class="card-text">Esta es una frase de ejemplo para el post.</p>
+                  </div>
+                </div>
+              </div>
+           </div>
+
+           <div class ="row justify-content-center g-1">
+               <div class="col-6">
+               <div class="card">
+                <div class="card-body d-flex justify-content-between p-2">
+                   <h6 class="card-title mb-0">Post número 3</h6>
+                   <h6 class="date">01/25</h6>
+                </div>
+                <img src="https://picsum.photos/600/400?3" class="card-img-top">
+
+                <div class="card-body pt-2">
+                   <p class="mb-1 fw-semibold">❤️ 109 likes</p>
+                   <p class="card-text">Esta es una frase de ejemplo para el post.</p>
+                </div>
+
+              </div>
+           </div>
+
+         </div>
+</div>
+
+
+</body>
+</html>
